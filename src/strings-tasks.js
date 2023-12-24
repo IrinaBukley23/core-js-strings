@@ -230,10 +230,10 @@ function endsWith(/* str, substr */) {
  *   formatTime(0, 0) => "00:00"
  */
 function formatTime(minutes, seconds) {
-  if (minutes < 10) {
-    return seconds < 10 ? `0${minutes}:0${seconds}` : `0${minutes}:${seconds}`;
-  }
-  return `${minutes}:${seconds}`;
+  return `${String(minutes).padStart(2, '0')}:${String(seconds).padStart(
+    2,
+    '0'
+  )}`;
 }
 
 /**
